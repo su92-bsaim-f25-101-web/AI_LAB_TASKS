@@ -1,0 +1,8 @@
+Step | Previous mode | Percept | Target mode | Outcome
+   1 | None          | (29, True)   | COOL        | SEND COMMAND
+   2 | COOL          | (29, True)   | COOL        | NO COMMAND
+   3 | COOL          | (20, True)   | IDLE        | SEND COMMAND
+   4 | IDLE          | (26, True)   | IDLE        | NO COMMAND
+   5 | IDLE          | (19, True)   | WARM        | SEND COMMAND
+   6 | WARM          | (29, False)  | ECO         | SEND COMMAND
+   7 | ECO           | (29, False)  | ECO         | NO COMMAND
