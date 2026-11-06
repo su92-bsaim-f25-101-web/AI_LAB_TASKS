@@ -1,0 +1,37 @@
+
+LAB 3 EXECUTION TRACES and OUTPUT RESULTS
+Student Name: Abdul Moiz 
+Roll No: BSAIM-F25-101
+
+
+--- SECTION 1: UNINFORMED GRAPH SEARCH (BFS & DFS) ---
+BFS Traversal:
+  - Traversal Path : ['A', 'B', 'E', 'G']
+  - Expansion Order: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+
+DFS Traversal:
+  - Traversal Path : ['A', 'B', 'E', 'G']
+  - Expansion Order: ['A', 'B', 'D', 'E', 'G']
+
+
+--- SECTION 2: DEPTH-BOUNDED EVALUATION (DLS & IDDFS) ---
+DLS Limits Evaluation:
+  - Limit 1 : ('CUTOFF', None)
+  - Limit 2 : ('CUTOFF', None)
+  - Limit 3 : ('FOUND', ['A', 'B', 'E', 'G'])
+  - Limit 4 : ('FOUND', ['A', 'B', 'E', 'G'])
+
+IDDFS Execution Steps:
+  - Limit: 0 | Status: CUTOFF | Path: None
+  - Limit: 1 | Status: CUTOFF | Path: None
+  - Limit: 2 | Status: CUTOFF | Path: None
+  - Limit: 3 | Status: FOUND  | Path: ['A', 'B', 'E', 'G']
+Final IDDFS Path Output: ['A', 'B', 'E', 'G']
+
+
+--- SECTION 3: UNIFORM COST SEARCH (UCS) ---
+UCS Execution:
+  - Minimum Cost Path: ['A', 'B', 'E', 'G']
+  - Total Accumulated Cost: 3
+  - Node Processing Sequence: ['A', 'B', 'C', 'E', 'G']
+============================================================
