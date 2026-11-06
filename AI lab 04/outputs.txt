@@ -1,0 +1,71 @@
+
+LAB 4
+ EXECUTION TRACES  and HEURISTIC EVALUATION
+Student Name: Abdul Moiz 
+Roll No: BSAIM-F25-101
+
+--- EXPERIMENT 1: INFORMED SEARCH (A* WITH SUPPLIED HEURISTIC) ---
+Execution Sequence:
+  - Selected S: g=0, h=5, f=5 | Path: S
+    -> Edge A: g=1, h=4, f=5
+    -> Edge B: g=4, h=4, f=8
+  - Selected A: g=1, h=4, f=5 | Path: S -> A
+    -> Edge C: g=3, h=2, f=5
+  - Selected C: g=3, h=2, f=5 | Path: S -> A -> C
+    -> Edge G: g=6, h=0, f=6
+  - Selected G: g=6, h=0, f=6 | Path: S -> A -> C -> G
+
+Experiment 1 Outcome:
+  - Target Reached: Path = S -> A -> C -> G
+  - Accumulated Cost (g): 6 | Verified Cost: 6
+  - Processed Node Log: ['S', 'A', 'C', 'G']
+  - Expanded Node Log: ['S', 'A', 'C']
+  - Total Expansion Count: 3
+
+
+--- EXPERIMENT 2: UNINFORMED CONTROL (UCS WITH ZERO HEURISTIC) ---
+Execution Sequence:
+  - Selected S: g=0, h=0, f=0 | Path: S
+    -> Edge A: g=1, h=0, f=1
+    -> Edge B: g=4, h=0, f=4
+  - Selected A: g=1, h=0, f=1 | Path: S -> A
+    -> Edge C: g=3, h=0, f=3
+  - Selected C: g=3, h=0, f=3 | Path: S -> A -> C
+    -> Edge G: g=6, h=0, f=6
+  - Selected B: g=4, h=0, f=4 | Path: S -> B
+  - Selected G: g=6, h=0, f=6 | Path: S -> A -> C -> G
+
+Experiment 2 Outcome:
+  - Target Reached: Path = S -> A -> C -> G
+  - Accumulated Cost (g): 6 | Verified Cost: 6
+  - Processed Node Log: ['S', 'A', 'C', 'B', 'G']
+  - Expanded Node Log: ['S', 'A', 'C', 'B']
+  - Total Expansion Count: 4
+
+
+--- EXPERIMENT 3: ADMISSIBILITY VIOLATION (A* WITH h(C)=10 OVERESTIMATE) ---
+Execution Sequence:
+  - Selected S: g=0, h=5, f=5 | Path: S
+    -> Edge A: g=1, h=4, f=5
+    -> Edge B: g=4, h=4, f=8
+  - Selected A: g=1, h=4, f=5 | Path: S -> A
+    -> Edge C: g=3, h=10, f=13
+  - Selected B: g=4, h=4, f=8 | Path: S -> B
+    -> Edge G: g=9, h=0, f=9
+  - Selected G: g=9, h=0, f=9 | Path: S -> B -> G
+
+Experiment 3 Outcome:
+  - Target Reached: Path = S -> B -> G
+  - Accumulated Cost (g): 9 | Verified Cost: 9
+  - Processed Node Log: ['S', 'A', 'B', 'G']
+  - Expanded Node Log: ['S', 'A', 'B']
+  - Total Expansion Count: 3
+
+
+============================================================
+COMPARATIVE EXPERIMENT SUMMARY
+============================================================
+1. Standard A*       : Path = S -> A -> C -> G | Cost = 6 | Expansions = 3
+2. Control UCS       : Path = S -> A -> C -> G | Cost = 6 | Expansions = 4
+3. Overestimate A*   : Path = S -> B -> G       | Cost = 9 | Expansions = 3
+============================================================
