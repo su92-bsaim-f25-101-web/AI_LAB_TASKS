@@ -1,0 +1,47 @@
+---------------TASK 2-----
+EVALUATION METRICS: score>=70, doc_status=True, cgpa>=2.5, max_income<=50000
+
+T1_pass
+  input    : score=82, complete=True, gpa=3.4, income=35000
+  expected : Review
+  actual   : Review   (MATCH)
+  reason   : fulfilled all evaluation metrics
+  why chosen: all criteria successfully met
+
+T2_fail_min_gpa
+  input    : score=80, complete=True, gpa=2.1, income=30000
+  expected : Hold
+  actual   : Hold   (MATCH)
+  reason   : rejected: gpa_below_threshold<2.5
+  why chosen: tested failure of GPA condition only
+
+T3_fail_income
+  input    : score=85, complete=True, gpa=3.2, income=72000
+  expected : Hold
+  actual   : Hold   (MATCH)
+  reason   : rejected: income_exceeded>50000
+  why chosen: tested failure of income condition only
+
+T4_boundary
+  input    : score=70, complete=True, gpa=2.5, income=50000
+  expected : Review
+  actual   : Review   (MATCH)
+  reason   : fulfilled all evaluation metrics
+  why chosen: every parameter sits exactly on the limit
+
+4/4 test scenarios executed successfully
+
+
+----------TASK 3--------
+
+
+case | symbolic | threshold | disagreement
+complete_high | Review | Review | False
+complete_low | Hold | Review | True
+incomplete_high | Hold | Review | True
+boundary | Review | Review | False
+
+--- Boundary isolation (Section 1.6) ---
+variant | symbolic | threshold | disagreement
+boundary_score_69 (prob 0.70) | Hold | Review | True
+boundary_prob_0.69 (score 70) | Review | Hold | True
