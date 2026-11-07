@@ -1,0 +1,63 @@
+============================================================
+
+LAB 5 EXECUTION TRACES & ADVERSARIAL SEARCH
+
+Student Name: Abdul Moiz | Roll No: BSAIM-F25-101
+
+============================================================
+
+
+
+--- BASE TREE EVALUATION ---
+
+  - Raw Input Array          : [3, 5, 2, 9, 0, 7, 0, 0]
+
+  - Minimax Final Root Value : 5
+
+  - Minimax Leaves Evaluated : 8
+
+  - Alpha-Beta Root Value    : 5
+
+  - Alpha-Beta Leaves Evaluated : 8
+
+
+
+--- BRANCH ORDERING EXPERIMENT 1 (STANDARD ORDER) ---
+
+  - Scores Configuration     : [3, 5, 2, 9, 3, 5, 2, 9]
+
+  - Minimax Optimal Value    : 5
+
+  - Minimax Leaves Count     : 8
+
+  - Alpha-Beta Optimal Value : 5
+
+  - Alpha-Beta Leaves Count  : 6
+
+
+
+--- BRANCH ORDERING EXPERIMENT 2 (REVERSED ORDER) ---
+
+  - Scores Configuration     : [9, 2, 5, 3, 9, 2, 5, 3]
+
+  - Minimax Optimal Value    : 5
+
+  - Minimax Leaves Count     : 8
+
+  - Alpha-Beta Optimal Value : 5
+
+  - Alpha-Beta Leaves Count  : 8
+
+
+
+============================================================
+
+SUMMARY OF OBSERVATIONS:
+
+1. Both Minimax and Alpha-Beta algorithms yield the exact same root decision value (5 across all trials).
+
+2. Alpha-Beta reduces leaf evaluations from 8 down to 6 in the standard ordering configuration.
+
+3. Reordering branches significantly impacts pruning efficiency (6 leaves vs 8 leaves) without altering decision accuracy.
+
+============================================================
